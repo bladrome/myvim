@@ -2,7 +2,7 @@
 0.
 
 		Make your own vim directories like this 
-		~/: .vim  .vim/ 
+		~/: .vimrc  .vim/ 
 		.vim/: bundle/	doc/	plugin/
 1.
 
