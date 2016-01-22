@@ -65,16 +65,16 @@ filetype indent on
 
 set nocompatible                " be iMproved
 filetype off                    " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Bundle 'VundleVim/Vundle.vim'
 
 "my Bundle here:
 "
 " original repos on github
-Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'sukima/xmledit'
 Bundle 'sjl/gundo.vim'
 Bundle 'jiangmiao/auto-pairs'
@@ -84,29 +84,31 @@ Bundle 'Valloric/ListToggle'
 Bundle 'SirVer/ultisnips'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
-Bundle 't9md/vim-quickhl'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'OmniSharp/omnisharp-vim.git'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 't9md/vim-quickhl'
+Bundle 'tpope/vim-fugitive'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'OmniSharp/omnisharp-vim'
+Bundle 'powerline/powerline'
 Bundle 'nathanaelkane/vim-indent-guides'
 "..................................
 " vim-scripts repos
-Bundle 'taglist.vim'
+Bundle 'a.vim'
 Bundle 'cscope.vim'
-Bundle 'The-NERD-tree'
-Bundle 'YankRing.vim'
-Bundle 'vcscommand.vim'
+Bundle 'EasyGrep'
 Bundle 'ShowPairs'
 Bundle 'SudoEdit.vim'
-Bundle 'EasyGrep'
+Bundle 'taglist.vim'
+Bundle 'vcscommand.vim'
 Bundle 'VOoM'
 Bundle 'VimIM'
-Bundle 'a.vim'
+Bundle 'YankRing.vim'
 "..................................
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 "......................................
+call vundle#end()
 filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
