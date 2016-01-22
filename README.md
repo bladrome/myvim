@@ -1,11 +1,14 @@
 # myvim
 0.
+
 		Make your own vim directories like this 
 		~/: .vim  .vim/ 
 		.vim/: bundle/	doc/	plugin/
 1.
+
 		cd ~/.vim/bundle/
 		git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 2.
 		
 		Put this at the top of your `.vimrc` to use Vundle. Remove plugins you don't need, they are for illustration purposes.
