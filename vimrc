@@ -50,6 +50,7 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
+nnoremap <F7> <ESC>:w<Cr>:PymodeRun<Cr>
 
 filetype indent on
 
@@ -74,6 +75,8 @@ Bundle 'VundleVim/Vundle.vim'
 "my Bundle here:
 "
 " original repos on github
+Bundle 'tomasr/molokai'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sukima/xmledit'
 Bundle 'sjl/gundo.vim'
@@ -82,6 +85,7 @@ Bundle 'tpope/vim-pathogen'
 Bundle 'klen/python-mode'
 Bundle 'Valloric/ListToggle'
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
@@ -104,6 +108,7 @@ Bundle 'vcscommand.vim'
 Bundle 'VOoM'
 Bundle 'VimIM'
 Bundle 'YankRing.vim'
+Bundle 'header.vim'
 "..................................
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
@@ -323,6 +328,7 @@ call pathogen#infect()
 
 call pathogen#helptags()
 
+
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 
 let g:pymode_run_bind = "<C-S-e>"
@@ -374,7 +380,10 @@ let g:gundo_right = 1
 "| |_| | |___| |  | | ___) | |\  || ||  __/ ___) |
 " \___/|_____|_| |___|____/|_| \_|___|_|   |____/ 
 "
-
+let g:UltiSnipsExpandTriger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-n>"
+let g:UltiSnipsJumpBackwardTrigger="<C-p>"
+let g:UltiSnipsEditSplit="vertical"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 "  ____ ____   ____ ___  ____  _____ 
@@ -383,6 +392,7 @@ let g:gundo_right = 1
 "| |___ ___) | |__| |_| |  __/| |___ 
 " \____|____/ \____\___/|_|   |_____|
 "                                    
+
 if has('cscope') 
 		set cscopetag cscopeverbose 
 		if has('quickfix') 
@@ -398,8 +408,9 @@ if has('cscope')
 		command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src 
 endif
 
-nnoremap <leader>fa :call cscope#findInteractive(expand('<cword'))<CR>
 "nnoremap <leader>l  :call ToggleLocationList()<CR>
+
+nnoremap <leader>fa :call cscope#findInteractive(expand('<cword'))<CR>
 
 " s: Find this C symbol
 nnoremap  <leader>fs :call cscope#find('s', expand('<cword>'))<CR>
@@ -459,3 +470,29 @@ let g:indent_guides_guide_size = 1
 "/_/   \_\
 "
 nmap <leader>ch :AS<Cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" __  __  ___  _     ___  _  __    _    ___ 
+"|  \/  |/ _ \| |   / _ \| |/ /   / \  |_ _|
+"| |\/| | | | | |  | | | | ' /   / _ \  | | 
+"| |  | | |_| | |__| |_| | . \  / ___ \ | | 
+"|_|  |_|\___/|_____\___/|_|\_\/_/   \_\___|
+"                                           
+"let g:molokai_original=1
+"let g:rehash256=1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ____   ___  _        _    ____  ___ __________ ____  
+"/ ___| / _ \| |      / \  |  _ \|_ _|__  / ____|  _ \ 
+"\___ \| | | | |     / _ \ | |_) || |  / /|  _| | | | |
+" ___) | |_| | |___ / ___ \|  _ < | | / /_| |___| |_| |
+"|____/ \___/|_____/_/   \_\_| \_\___/____|_____|____/ 
+"                                                      
+let g:solarized_termcolor=256
+set background=dark
+colorscheme solarized
+if has('gui_running')
+		set background=light
+else
+		set background=dark
+endif
