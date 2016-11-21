@@ -43,16 +43,15 @@ set softtabstop=4
 set encoding=utf-8
 
 "quit 
-nmap <C-q><C-q> :q<Cr>
+nmap <ESC>w :w<Cr>
+nmap <ESC>q :q<Cr>
 "split navigations
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
-
 filetype indent on
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -84,7 +83,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rdnetto/YCM-Generator', {'branch':'stable'}
-Bundle 'scrooloose/syntastic'
+Bundle 'vim-syntastic/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 't9md/vim-quickhl'
@@ -106,12 +105,34 @@ Bundle 'vcscommand.vim'
 Bundle 'VOoM'
 Bundle 'VimIM'
 Bundle 'header.vim'
+Bundle 'auto'
+Bundle 'LargeFile'
+Bundle 'CCTree'
 "..................................
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 "......................................
 call vundle#end()
 filetype plugin indent on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ______   ___   _ _____  _    ____ _____ ___ ____ 
+"/ ___\ \ / / \ | |_   _|/ \  / ___|_   _|_ _/ ___|
+"\___ \\ V /|  \| | | | / _ \ \___ \ | |  | | |    
+" ___) || | | |\  | | |/ ___ \ ___) || |  | | |___ 
+"|____/ |_| |_| \_| |_/_/   \_\____/ |_| |___\____|
+"                                                  
+"                                                  
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+ 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -126,12 +147,12 @@ set completeopt-=preview
 
 set tags+=./.tags
                    
-"let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
 "Do not ask when starting vim
 let g:ycm_confirm_extra_conf = 0
 
-let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
 
 let g:ycm_collect_identifiers_from_tags_files = 1
 
@@ -154,13 +175,12 @@ inoremap <leader>, <C-x><C-o>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
 " _   _ _____ ____  ____      _____ ____  _____ _____ 
 "| \ | | ____|  _ \|  _ \    |_   _|  _ \| ____| ____|
 "|  \| |  _| | |_) | | | |_____| | | |_) |  _| |  _|  
 "| |\  | |___|  _ <| |_| |_____| | |  _ <| |___| |___ 
 "|_| \_|_____|_| \_\____/      |_| |_| \_\_____|_____|
+"
 "
                                                      
 let NERDTreeWinPos="left"
@@ -195,6 +215,7 @@ nnoremap <silent><F4> :NERDTreeToggle<CR>
 "| |___  | | |  _ <| |___|  __/ 
 " \____| |_| |_| \_\_____|_|    
 "                           
+"                           
 let g:ctrlp_map = '<leader>p'
 
 let g:ctrlp_cmd = 'CtrlP'
@@ -225,6 +246,7 @@ let g:ctrlp_follow_symlinks=1
 "| |_| | |_| | |\  | |_| | |_| |
 " \____|\___/|_| \_|____/ \___/ 
 "                               
+"                               
 "nnoremap <F3> :GundoToggle<CR>
 let g:gundo_width = 50
 
@@ -238,6 +260,7 @@ let g:gundo_right = 1
 "| | | | |   | |  | |\___ \|  \| || || |_) \___ \ 
 "| |_| | |___| |  | | ___) | |\  || ||  __/ ___) |
 " \___/|_____|_| |___|____/|_| \_|___|_|   |____/ 
+"
 "
 " let g:UltiSnipsExpandTriger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-n>"
@@ -266,7 +289,7 @@ if has('cscope')
 		cnoreabbrev css cs show 
 		cnoreabbrev csh cs help 
 		
-		command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src 
+		"command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src 
 endif
 
 "nnoremap <leader>l  :call ToggleLocationList()<CR>
@@ -297,6 +320,7 @@ nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 "  | |/ ___ \ |_| | |___ | | ___) || |  
 "  |_/_/   \_\____|_____|___|____/ |_|  
 "                                       
+"                                       
 nmap <F2> :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -305,6 +329,7 @@ nmap <F2> :TagbarToggle<CR>
 "| |_) | | | \ \ /\ / /|  _| | |_) | |    | ||  \| |  _|  
 "|  __/| |_| |\ V  V / | |___|  _ <| |___ | || |\  | |___ 
 "|_|    \___/  \_/\_/  |_____|_| \_\_____|___|_| \_|_____|
+"                                                         
 "                                                         
 let g:Powerline_symbols = 'unicode'
 
@@ -319,7 +344,8 @@ let g:Powerline_colorscheme = 'solarized256'
 "                                                              
 
 "let g:indent_guides_enable_on_vim_startup = 1
-"
+"set ts=4 sw=4 et
+
 let g:indent_guides_start_level = 2
 
 let g:indent_guides_guide_size = 1
@@ -330,6 +356,7 @@ let g:indent_guides_guide_size = 1
 "  / _ \  
 " / ___ \ 
 "/_/   \_\
+"
 "
 nmap <leader>ch :AS<Cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -359,3 +386,13 @@ nmap <leader>ch :AS<Cr>
 "|__/                                     
 "
 let g:jedi#use_splits_not_buffers = "left"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" _        _    ____   ____ _____      _____ ___ _     _____ 
+"| |      / \  |  _ \ / ___| ____|    |  ___|_ _| |   | ____|
+"| |     / _ \ | |_) | |  _|  _| _____| |_   | || |   |  _|  
+"| |___ / ___ \|  _ <| |_| | |__|_____|  _|  | || |___| |___ 
+"|_____/_/   \_\_| \_\\____|_____|    |_|   |___|_____|_____|
+"                                                            
+let g:LargeFile = 20
