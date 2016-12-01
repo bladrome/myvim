@@ -11,6 +11,8 @@
 "blkcat:set leader
 let mapleader=","
 
+set timeoutlen=1000
+set ttimeoutlen=100
 set laststatus=2
 set number
 set ruler
@@ -44,7 +46,7 @@ set encoding=utf-8
 
 "quit 
 nmap <ESC>w :w<Cr>
-nmap <ESC>q :q<Cr>
+nmap <ESC>q :q!<Cr>
 "split navigations
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
@@ -247,7 +249,9 @@ let g:ctrlp_follow_symlinks=1
 " \____|\___/|_| \_|____/ \___/ 
 "                               
 "                               
-"nnoremap <F3> :GundoToggle<CR>
+"                               
+nnoremap <F6> :GundoToggle<CR>
+
 let g:gundo_width = 50
 
 let g:gundo_preview_height = 40
@@ -321,7 +325,7 @@ nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 "  |_/_/   \_\____|_____|___|____/ |_|  
 "                                       
 "                                       
-nmap <F2> :TagbarToggle<CR>
+nmap <F3> :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " ____   _____        _______ ____  _     ___ _   _ _____ 
