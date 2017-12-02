@@ -14,8 +14,6 @@ let mapleader=","
 set noeb
 set report=0
 
-set timeoutlen=1000
-set ttimeoutlen=100
 set laststatus=2
 set number
 set ruler
@@ -82,14 +80,12 @@ set t_Co=256
 nmap <ESC>w :w<Cr>
 nmap <ESC>q :q!<Cr>
 "split navigations
+"
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
-filetype on
-filetype plugin on
-filetype indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -110,71 +106,69 @@ Bundle 'VundleVim/Vundle.vim'
 "my Bundle here:
 "
 " original repos on github
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'L9'
-Bundle 'kien/ctrlp.vim'
-Bundle 'sukima/xmledit'
-Bundle 'sjl/gundo.vim'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'Valloric/ListToggle'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'rdnetto/YCM-Generator', {'branch':'stable'}
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 't9md/vim-quickhl'
-Bundle 'tpope/vim-fugitive'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'powerline/powerline'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'Yggdroot/indentLine'
-Bundle 'easymotion/vim-easymotion'
-Bundle 'iamcco/markdown-preview.vim'
-Bundle 'haya14busa/incsearch.vim'
-Bundle 'ryanoasis/vim-devicons'
-Bundle 'w0rp/ale'
-Bundle 'zeekay/vim-beautify'
-Bundle 'thinca/vim-quickrun'
-Bundle 'skywind3000/asyncrun.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'chxuan/change-colorscheme'
-Bundle 'wsdjeg/FlyGrep.vim'
-Bundle 'iamcco/mathjax-support-for-mkdp'
-Bundle 'Valloric/MatchTagAlways'
-Bundle 'docunext/closetag.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-endwise'
-Bundle 'octol/vim-cpp-enhanced-highlight'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'vim-scripts/DoxygenToolkit.vim'
-Bundle 'vim-scripts/txt.vim'
-Bundle 'gorodinskiy/vim-coloresque'
-Bundle 'will133/vim-dirdiff'
-Bundle 'mhinz/vim-startify'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'L9'
+Plugin 'kien/ctrlp.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'Valloric/ListToggle'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator', {'branch':'stable'}
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 't9md/vim-quickhl'
+Plugin 'tpope/vim-fugitive'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'powerline/powerline'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'Yggdroot/indentLine'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'iamcco/markdown-preview.vim'
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'w0rp/ale'
+Plugin 'zeekay/vim-beautify'
+Plugin 'thinca/vim-quickrun'
+Plugin 'skywind3000/asyncrun.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'chxuan/change-colorscheme'
+Plugin 'wsdjeg/FlyGrep.vim'
+Plugin 'iamcco/mathjax-support-for-mkdp'
+Plugin 'Valloric/MatchTagAlways'
+Plugin 'docunext/closetag.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-endwise'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'vim-scripts/txt.vim'
+Plugin 'gorodinskiy/vim-coloresque'
+Plugin 'will133/vim-dirdiff'
+Plugin 'mhinz/vim-startify'
 "...................................
 " vim-scripts repos
-Bundle 'davidhalter/jedi-vim'
-Bundle 'a.vim'
-Bundle 'cscope.vim'
-Bundle 'EasyGrep'
-Bundle 'ShowPairs'
-Bundle 'SudoEdit.vim'
-Bundle 'VOoM'
-Bundle 'VimIM'
-Bundle 'header.vim'
-Bundle 'LargeFile'
-Bundle 'CCTree'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'a.vim'
+Plugin 'cscope.vim'
+Plugin 'EasyGrep'
+Plugin 'ShowPairs'
+Plugin 'SudoEdit.vim'
+Plugin 'VOoM'
+Plugin 'VimIM'
+Plugin 'header.vim'
+Plugin 'LargeFile'
+Plugin 'CCTree'
 "......................................
 call vundle#end()
 filetype plugin indent on
-
-runtime macros/matchit.vim
+filetype on
+filetype plugin on
+filetype indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
