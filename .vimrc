@@ -1,3 +1,7 @@
+" File              : .vimrc
+" Author            : blkcat <blackwhitedoggie@163.com>
+" Date              : 05.12.2017
+" Last Modified Date: 05.12.2017
 "blkcat commonly settings:
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -24,8 +28,8 @@ set history=1000
 set nobackup
 set noswapfile
 
-set splitbelow
 set splitright
+set splitbelow
 
 set autoindent
 set cindent
@@ -150,6 +154,8 @@ Plugin 'vim-scripts/txt.vim'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'will133/vim-dirdiff'
 Plugin 'mhinz/vim-startify'
+Plugin 'lervag/vimtex'
+Plugin 'alpertuna/vim-header'
 "...................................
 " vim-scripts repos
 Plugin 'davidhalter/jedi-vim'
@@ -160,7 +166,6 @@ Plugin 'ShowPairs'
 Plugin 'SudoEdit.vim'
 Plugin 'VOoM'
 Plugin 'VimIM'
-Plugin 'header.vim'
 Plugin 'LargeFile'
 Plugin 'CCTree'
 "......................................
@@ -169,6 +174,23 @@ filetype plugin indent on
 filetype on
 filetype plugin on
 filetype indent on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"    _    _     _____ 
+"   / \  | |   | ____|
+"  / _ \ | |   |  _|  
+" / ___ \| |___| |___ 
+"/_/   \_\_____|_____|
+"ale                     
+let g:ale_fixers = {
+\   'python':['autopep8', 'isort','yapf'],
+\   'cpp':['clang-format'],
+\   'tex':['lacheck'],
+\}
+
+
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -640,3 +662,17 @@ colorscheme monokai
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let c_no_curly_error = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"__     _____ __  __       _   _ _____    _    ____  _____ ____  
+"\ \   / /_ _|  \/  |     | | | | ____|  / \  |  _ \| ____|  _ \ 
+" \ \ / / | || |\/| |_____| |_| |  _|   / _ \ | | | |  _| | |_) |
+"  \ V /  | || |  | |_____|  _  | |___ / ___ \| |_| | |___|  _ < 
+"   \_/  |___|_|  |_|     |_| |_|_____/_/   \_\____/|_____|_| \_\
+"                                                                
+"vim-header
+let g:header_field_author = 'blkcat'
+let g:header_field_author_email = 'blackwhitedoggie@163.com'
+let g:header_alignment = 1
+let g:header_field_modified_by = 0
