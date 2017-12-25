@@ -1,7 +1,3 @@
-" File              : .vimrc
-" Author            : blkcat <blackwhitedoggie@163.com>
-" Date              : 05.12.2017
-" Last Modified Date: 05.12.2017
 "blkcat commonly settings:
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -16,6 +12,7 @@
 let mapleader=","
 
 set noeb
+set noerrorbells
 set report=0
 
 set laststatus=2
@@ -67,7 +64,7 @@ set smartindent
 set expandtab
 set shiftwidth=4
 set history=1000
-set nowrap
+set wrap
 
 set magic                   
 
@@ -156,6 +153,8 @@ Plugin 'will133/vim-dirdiff'
 Plugin 'mhinz/vim-startify'
 Plugin 'lervag/vimtex'
 Plugin 'alpertuna/vim-header'
+Plugin 'Sirver/ultisnips'
+Plugin 'honza/vim-snippets'
 "...................................
 " vim-scripts repos
 Plugin 'davidhalter/jedi-vim'
@@ -186,7 +185,7 @@ filetype indent on
 let g:ale_fixers = {
 \   'python':['autopep8', 'isort','yapf'],
 \   'cpp':['clang-format'],
-\   'tex':['lacheck'],
+\   'tex':['lacheck']
 \}
 
 
@@ -526,10 +525,10 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 "                                                       
 "markdown
 let g:mkdp_path_to_chrome = "google-chrome"
-nmap <silent> <F7> <Plug>MarkdownPreview
-imap <silent> <F7> <Plug>MarkdownPreview
-nmap <silent> <F8> <Plug>StopMarkdownPreview
-imap <silent> <F8> <Plug>StopMarkdownPreview
+nmap <silent> <F8> <Plug>MarkdownPreview
+imap <silent> <F8> <Plug>MarkdownPreview
+"nmap <silent> <F8> <Plug>StopMarkdownPreview
+"imap <silent> <F8> <Plug>StopMarkdownPreview
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -676,3 +675,33 @@ let g:header_field_author = 'blkcat'
 let g:header_field_author_email = 'blackwhitedoggie@163.com'
 let g:header_alignment = 1
 let g:header_field_modified_by = 0
+let g:header_auto_add_header = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:beautify = {
+\"beautifiers":{
+\"python":['autopep8', 'isort','yapf']
+\}
+\}
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"vimtex
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+let g:vimtex_compiler_progname = '/usr/bin/vim'
+let g:vimtex_compiler_latexmk = {
+    \ 'backend' : 'jobs',
+    \ 'background' : 1,
+    \ 'build_dir' : '',
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
+    \ 'executable' : 'latexmk',
+    \ 'options' : [
+    \   '-pdfxe',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
