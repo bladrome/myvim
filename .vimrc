@@ -115,6 +115,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'Valloric/ListToggle'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator', {'branch':'stable'}
+Plugin 'tenfyzhong/CompleteParameter.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 't9md/vim-quickhl'
@@ -135,6 +136,7 @@ Plugin 'skywind3000/asyncrun.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'chxuan/change-colorscheme'
 Plugin 'wsdjeg/FlyGrep.vim'
+Plugin 'iamcco/markdown-preview.vim'
 Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'docunext/closetag.vim'
@@ -203,6 +205,8 @@ let g:ale_fixers = {
 set completeopt-=preview
 
 set tags+=./.tags
+
+let g:ycm_server_python_interpreter='/usr/bin/python3'
                    
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
@@ -233,6 +237,17 @@ nnoremap <leader>o :YcmCompleter GoToInclude<CR>
 inoremap <leader>, <C-x><C-o>
 
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CompleterParameter
+"
+"
+inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " _   _ _____ ____  ____      _____ ____  _____ _____ 
