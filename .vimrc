@@ -127,6 +127,10 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'Yggdroot/indentLine'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'iamcco/markdown-preview.vim'
+Plugin 'iamcco/mathjax-support-for-mkdp'
+Plugin 'mzlogin/vim-markdown-toc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'w0rp/ale'
@@ -136,8 +140,6 @@ Plugin 'skywind3000/asyncrun.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'chxuan/change-colorscheme'
 Plugin 'wsdjeg/FlyGrep.vim'
-Plugin 'iamcco/markdown-preview.vim'
-Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'docunext/closetag.vim'
 Plugin 'godlygeek/tabular'
@@ -157,9 +159,10 @@ Plugin 'lervag/vimtex'
 Plugin 'alpertuna/vim-header'
 Plugin 'Sirver/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'flazz/vim-colorschemes'
 "...................................
 " vim-scripts repos
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 Plugin 'a.vim'
 Plugin 'cscope.vim'
 Plugin 'EasyGrep'
@@ -478,7 +481,7 @@ let g:indent_guides_guide_size = 1
 " _/ |\___|\__,_|_|      \_/ |_|_| |_| |_|
 "|__/                                     
 "
-let g:jedi#use_splits_not_buffers = "left"
+"let g:jedi#use_splits_not_buffers = "left"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
