@@ -99,81 +99,81 @@ nnoremap <C-h> <C-w><C-h>
 
 set nocompatible                " be iMproved
 filetype off                    " required!
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+set rtp+=~/.vim/vim-plug
+call plug#begin('~/.vim/plugged')
 
-Bundle 'VundleVim/Vundle.vim'
+Plug 'junegunn/vim-plug'
 
 "my Bundle here:
 "
 " original repos on github
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'L9'
-Plugin 'kien/ctrlp.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'Valloric/ListToggle'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator', {'branch':'stable'}
-Plugin 'tenfyzhong/CompleteParameter.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 't9md/vim-quickhl'
-Plugin 'tpope/vim-fugitive'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'powerline/powerline'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'Yggdroot/indentLine'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'iamcco/markdown-preview.vim'
-Plugin 'iamcco/mathjax-support-for-mkdp'
-Plugin 'mzlogin/vim-markdown-toc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'w0rp/ale'
-Plugin 'zeekay/vim-beautify'
-Plugin 'thinca/vim-quickrun'
-Plugin 'skywind3000/asyncrun.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'chxuan/change-colorscheme'
-Plugin 'wsdjeg/FlyGrep.vim'
-Plugin 'Valloric/MatchTagAlways'
-Plugin 'docunext/closetag.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-endwise'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'vim-scripts/txt.vim'
-Plugin 'gorodinskiy/vim-coloresque'
-Plugin 'will133/vim-dirdiff'
-Plugin 'mhinz/vim-startify'
-Plugin 'lervag/vimtex'
-Plugin 'alpertuna/vim-header'
-Plugin 'Sirver/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'flazz/vim-colorschemes'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-scripts/L9'
+Plug 'kien/ctrlp.vim'
+Plug 'sjl/gundo.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Valloric/ListToggle'
+Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator', {'branch':'stable'}
+Plug 'tenfyzhong/CompleteParameter.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 't9md/vim-quickhl'
+Plug 'tpope/vim-fugitive'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'powerline/powerline'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'Yggdroot/indentLine'
+Plug 'easymotion/vim-easymotion'
+Plug 'iamcco/markdown-preview.vim'
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'mzlogin/vim-markdown-toc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'haya14busa/incsearch.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'w0rp/ale'
+Plug 'zeekay/vim-beautify'
+Plug 'thinca/vim-quickrun'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'majutsushi/tagbar'
+Plug 'chxuan/change-colorscheme'
+Plug 'wsdjeg/FlyGrep.vim'
+Plug 'Valloric/MatchTagAlways'
+Plug 'docunext/closetag.vim'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-endwise'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vim-scripts/txt.vim'
+Plug 'gorodinskiy/vim-coloresque'
+Plug 'will133/vim-dirdiff'
+Plug 'mhinz/vim-startify'
+Plug 'lervag/vimtex'
+Plug 'alpertuna/vim-header'
+Plug 'Sirver/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'flazz/vim-colorschemes'
 "...................................
 " vim-scripts repos
 "Plugin 'davidhalter/jedi-vim'
-Plugin 'a.vim'
-Plugin 'cscope.vim'
-Plugin 'EasyGrep'
-Plugin 'ShowPairs'
-Plugin 'SudoEdit.vim'
-Plugin 'VOoM'
-Plugin 'VimIM'
-Plugin 'LargeFile'
-Plugin 'CCTree'
+Plug 'vim-scripts/a.vim'
+Plug 'vim-scripts/cscope.vim'
+Plug 'vim-scripts/EasyGrep'
+Plug 'vim-scripts/ShowPairs'
+Plug 'vim-scripts/VOoM'
+Plug 'vim-scripts/VimIM'
+Plug 'vim-scripts/LargeFile'
+Plug 'vim-scripts/CCTree'
 "......................................
-call vundle#end()
+call plug#end()
+
 filetype plugin indent on
 filetype on
 filetype plugin on
@@ -209,7 +209,8 @@ set completeopt-=preview
 
 set tags+=./.tags
 
-let g:ycm_server_python_interpreter='/usr/bin/python3'
+let g:ycm_python_interpreter_path = '/usr/bin/python3'
+"let g:ycm_server_python_interpreter='/usr/bin/python3'
                    
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
@@ -542,7 +543,7 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 "|_|  |_/_/   \_\_| \_\_|\_\____/ \___/  \_/\_/  |_| \_|
 "                                                       
 "markdown
-let g:mkdp_path_to_chrome = "google-chrome"
+let g:mkdp_path_to_chrome = "firefox"
 nmap <silent> <F8> <Plug>MarkdownPreview
 imap <silent> <F8> <Plug>MarkdownPreview
 "nmap <silent> <F8> <Plug>StopMarkdownPreview
