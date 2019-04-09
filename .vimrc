@@ -73,7 +73,6 @@ set autowrite
 set confirm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termencoding=utf-8
-set encoding=utf8
 
 set t_Co=256
 
@@ -108,8 +107,7 @@ Plug 'junegunn/vim-plug'
 "
 " original repos on github
 Plug 'altercation/vim-colors-solarized'
-Plug 'vim-scripts/L9'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sjl/gundo.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/ListToggle'
@@ -233,6 +231,11 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 let g:ycm_seed_identifiers_with_syntax = 1
 
+let g:ycm_key_list_select_completion = ["<C-n>", "<Down>"]
+let g:ycm_key_list_previous_completion = ["<C-p>", "<Up>"]
+
+let g:ycm_use_ultisnips_complter = 1
+
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 nnoremap <leader>u :YcmCompleter GoToDeclaration<CR>
@@ -352,7 +355,8 @@ let g:gundo_right = 1
 " \___/|_____|_| |___|____/|_| \_|___|_|   |____/ 
 "
 "
-" let g:UltiSnipsExpandTriger="<tab>"
+let g:UltiSnipsExpandTriger="<tab>"
+
 let g:UltiSnipsJumpForwardTrigger="<C-n>"
 
 let g:UltiSnipsJumpBackwardTrigger="<C-p>"
@@ -412,8 +416,6 @@ nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 "                                     
 "                                       
 "tagbar
-" let g:tagbar_ctags_bin = '/usr/bin/ctags' "linux
-" let g:tagbar_ctags_bin = '/usr/local/bin/ctags' "mac
 let g:tagbar_width = 30
 map <Leader>t :TagbarToggle<CR>
 imap <Leader>t <ESC> :TagbarToggle<CR>
