@@ -658,17 +658,17 @@ let g:DoxygenToolkit_commentType="Qt"
 "\____\___/|_____\___/|_| \_\____/ \____|_| |_|_____|_|  |_|_____|
 "                                                                 
 " change-colorscheme
-map <F10> :NextColorScheme<CR>
-imap <F10> <ESC> :NextColorScheme<CR>
-map <F9> :PreviousColorScheme<CR>
-imap <F9> <ESC> :PreviousColorScheme<CR>
+map <F9> :NextColorScheme<CR>
+imap <F9> <ESC> :NextColorScheme<CR>
+map <F10> :PreviousColorScheme<CR>
+imap <F10> <ESC> :PreviousColorScheme<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " colorscheme
 set background=dark
 let g:solarized_termcolors=256
 "colorscheme solarized
-colorscheme monokai
+"colorscheme monokai
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
