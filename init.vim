@@ -89,12 +89,7 @@ nnoremap <C-h> <C-w><C-h>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"__     ___   _ _   _ ____  _     _____ 
-"\ \   / / | | | \ | |  _ \| |   | ____|
-" \ \ / /| | | |  \| | | | | |   |  _|  
-"  \ V / | |_| | |\  | |_| | |___| |___ 
-"   \_/   \___/|_| \_|____/|_____|_____|
-"                                       
+" plug-vim
 
 set nocompatible                " be iMproved
 filetype off                    " required!
@@ -106,7 +101,13 @@ Plug 'junegunn/vim-plug'
 "my Bundle here:
 "
 " original repos on github
-Plug 'altercation/vim-colors-solarized'
+Plug 'hardcoreplayers/spaceline.vim'
+Plug 'bagrat/vim-buffet'
+Plug 'liuchengxu/vim-clap'
+Plug 'tyru/caw.vim'
+Plug 'liuchengxu/vista.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'voldikss/vim-floaterm'
 Plug 'sjl/gundo.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/ListToggle'
@@ -118,13 +119,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Yggdroot/LeaderF'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'scrooloose/nerdcommenter'
 Plug 't9md/vim-quickhl'
 Plug 'tpope/vim-fugitive'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'powerline/powerline'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 Plug 'rstacruz/sparkup'
 Plug 'Yggdroot/indentLine'
 Plug 'easymotion/vim-easymotion'
@@ -139,11 +140,12 @@ Plug 'w0rp/ale'
 Plug 'thinca/vim-quickrun'
 Plug 'majutsushi/tagbar'
 Plug 'chxuan/change-colorscheme'
+Plug 'joshdick/onedark.vim'
 Plug 'wsdjeg/FlyGrep.vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'docunext/closetag.vim'
 Plug 'godlygeek/tabular'
-Plug 'tpope/vim-surround'
+Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise'
@@ -514,19 +516,6 @@ imap <Leader>t <ESC> :TagbarToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-" ____   _____        _______ ____  _     ___ _   _ _____ 
-"|  _ \ / _ \ \      / / ____|  _ \| |   |_ _| \ | | ____|
-"| |_) | | | \ \ /\ / /|  _| | |_) | |    | ||  \| |  _|  
-"|  __/| |_| |\ V  V / | |___|  _ <| |___ | || |\  | |___ 
-"|_|    \___/  \_/\_/  |_____|_| \_\_____|___|_| \_|_____|
-"                                                         
-"                                                         
-"powerline
-let g:Powerline_symbols = 'unicode'
-
-let g:Powerline_colorscheme = 'solarized256'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ___ _   _ ____  _____ _   _ _____ ____ _   _ ___ ____  _____ 
 "|_ _| \ | |  _ \| ____| \ | |_   _/ ___| | | |_ _|  _ \| ____|
 " | ||  \| | | | |  _| |  \| | | || |  _| | | || || | | |  _|  
@@ -552,24 +541,7 @@ let g:indent_guides_guide_size = 1
 "nmap <leader>ch :AS<Cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-" ____   ___  _        _    ____  ___ __________ ____  
-"/ ___| / _ \| |      / \  |  _ \|_ _|__  / ____|  _ \ 
-"\___ \| | | | |     / _ \ | |_) || |  / /|  _| | | | |
-" ___) | |_| | |___ / ___ \|  _ < | | / /_| |___| |_| |
-"|____/ \___/|_____/_/   \_\_| \_\___/____|_____|____/ 
-"                                                      
-"let g:solarized_termcolor=256
-"set background=dark
-"colorscheme solarized
-"if has('gui_running')
-"    	set background=light
-"else
-"    	set background=dark
-"endif
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   _          _ _            _           
+"   _          _ _            _
 "  (_) ___  __| (_)    __   _(_)_ __ ___  
 "  | |/ _ \/ _` | |____\ \ / / | '_ ` _ \ 
 "  | |  __/ (_| | |_____\ V /| | | | | | |
@@ -761,6 +733,8 @@ set background=dark
 "let g:solarized_termcolors=256
 "colorscheme solarized
 "colorscheme monokai
+colorscheme onedark
+let g:airline_theme='onedark'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -795,6 +769,7 @@ let g:header_auto_add_header = 0
 "vimtex
 " let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 " let g:vimtex_compiler_progname = '/usr/bin/vim'
+let g:tex_flavor = 'xelatex'
 let g:vimtex_compiler_latexmk = {
     \ 'backend' : 'jobs',
     \ 'background' : 1,
